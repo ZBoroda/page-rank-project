@@ -1,5 +1,3 @@
-import numpy as np
-import pandas as pd
 
 """
 Function to make weighted adjaceny matrix with a matrix as the input.
@@ -35,7 +33,7 @@ The Page Rank function takes inputs: an adjacency matrix A of a graph, the numbe
 """
 
 
-def pagerank(a, num_iterations, alpha, v):
+def pagerank(a, v, num_iterations = 100, alpha = 0.85):
     m = makeWeightedAdjacency(a)
     # print(np.linalg.eig(A)[1][:,0] / np.linalg.norm(np.linalg.eig(A)[1][:,0],1))
     g = (alpha * m + (1 - alpha) / m.shape[1])
